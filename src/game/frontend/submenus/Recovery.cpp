@@ -25,8 +25,14 @@ namespace YimMenu::Submenus
 		generalGroup->AddItem(std::make_shared<BoolCommandItem>("playallmissionssolo"_J));
 		generalGroup->AddItem(std::make_shared<CommandItem>("forcelaunchheist"_J));
 		generalGroup->AddItem(std::make_shared<BoolCommandItem>("unlockgtaplus"_J));
+		generalGroup->AddItem(std::make_shared<BoolCommandItem>("overridecashmultiplier"_J));
+		generalGroup->AddItem(std::make_shared<ConditionalItem>("overridecashmultiplier"_J, std::make_shared<FloatCommandItem>("cashmultiplierinput"_J)));
 		generalGroup->AddItem(std::make_shared<BoolCommandItem>("overriderpmultiplier"_J));
 		generalGroup->AddItem(std::make_shared<ConditionalItem>("overriderpmultiplier"_J, std::make_shared<FloatCommandItem>("rpmultiplierinput"_J)));
+		generalGroup->AddItem(std::make_shared<BoolCommandItem>("overridecmcashmultiplier"_J));
+		generalGroup->AddItem(std::make_shared<ConditionalItem>("overridecmcashmultiplier"_J, std::make_shared<FloatCommandItem>("cmcashmultiplierinput"_J)));
+		generalGroup->AddItem(std::make_shared<BoolCommandItem>("overridecmrpmultiplier"_J));
+		generalGroup->AddItem(std::make_shared<ConditionalItem>("overridecmrpmultiplier"_J, std::make_shared<FloatCommandItem>("cmrpmultiplierinput"_J)));
 
 		generalGroup->AddItem(std::make_shared<BoolCommandItem>("freechangeappearance"_J));
 		generalGroup->AddItem(std::make_shared<BoolCommandItem>("nochangeappearancecooldown"_J));
