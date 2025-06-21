@@ -112,8 +112,8 @@ namespace YimMenu::Features
 		}
 	};
 
-	static OverrideRPMultiplier _OverrideCashMultiplier{"overridecashmultiplier", "Override RP Multiplier", "Multiplies RP by the given value"};
+	static OverrideCashMultiplier _OverrideCashMultiplier{"overridecashmultiplier", "Override Cash Multiplier", "Multiplies Cash by the given value"};
 	static OverrideRPMultiplier _OverrideRPMultiplier{"overriderpmultiplier", "Override RP Multiplier", "Multiplies RP by the given value"};
-	static OverrideRPMultiplier _OverrideContactMissionCashMultiplier{"overridecmcashmultiplier", "Override RP Multiplier", "Multiplies RP by the given value"};
-	static OverrideRPMultiplier _OverrideContactMissionRPMultiplier{"overridecmrpmultiplier", "Override RP Multiplier", "Multiplies RP by the given value"};
+	static OverrideCMCashMultiplier _OverrideContactMissionCashMultiplier{"overridecmcashmultiplier", "Override Contact Mission Cash Multiplier", "Multiplies Mission Cash by the given value"};
+	static OverrideCMRPMultiplier _OverrideContactMissionRPMultiplier{"overridecmrpmultiplier", "Override Contact Mission RP Multiplier", "Multiplies Mission RP by the given value"};
 }
