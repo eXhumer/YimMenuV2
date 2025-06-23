@@ -120,7 +120,7 @@ namespace YimMenu::Submenus
 
 		menu->AddItem(playerOptionsGroup);
 
-		
+
 		auto customPlayerTp = std::make_shared<Group>("", 1);
 		customPlayerTp->AddItem(std::make_shared<Vector3CommandItem>("playertpcoord"_J, ""));
 		customPlayerTp->AddItem(std::make_shared<PlayerCommandItem>("tpplayertocoord"_J, "Teleport"));

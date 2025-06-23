@@ -1001,9 +1001,9 @@ namespace YimMenu
 	    "s_m_y_xmech_01",
 	    "s_m_y_xmech_02",
 	    "s_m_y_xmech_02_mp",
-	   // "slod_human", you don't want to spawn these
-	   // "slod_large_quadped",
-	   // "slod_small_quadped",
+	    // "slod_human", you don't want to spawn these
+	    // "slod_large_quadped",
+	    // "slod_small_quadped",
 	    "u_f_m_casinocash_01",
 	    "u_f_m_casinoshop_01",
 	    "u_f_m_corpse_01",

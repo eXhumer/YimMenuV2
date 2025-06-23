@@ -61,7 +61,7 @@ struct FreemodeGeneral
 	uint64_t PAD_0302[6553];
 	STREET_DEALERS StreetDealers; // 6855
 	uint64_t PAD_6879[71];
-	DAILY_RESET_DATA DailyReset; // 6950
+	DAILY_RESET_DATA DailyReset;         // 6950
 	FREEMODE_DELIVERY_DATA DeliveryData; // 6954
 
 	static FreemodeGeneral* Get();

@@ -6,18 +6,18 @@
 namespace YimMenu::Features
 {
 	static const std::vector<std::pair<int, const char*>> g_StyleOptions = {
-		{0, "Classic"},
-		{1, "Modern"},
-		{2, "Modern (Vertical)"},
+	    {0, "Classic"},
+	    {1, "Modern"},
+	    {2, "Modern (Vertical)"},
 	};
 
 	// Expose as global reference so other code can use it
 	static ListCommand _StyleSelector{
-		"styleselector",
-		"UI Style",
-		"Choose the UI style",
-		g_StyleOptions,
-		0};
+	    "styleselector",
+	    "UI Style",
+	    "Choose the UI style",
+	    g_StyleOptions,
+	    0};
 }
 
 namespace YimMenu

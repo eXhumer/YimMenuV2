@@ -17,7 +17,7 @@ namespace YimMenu
 	    m_Initialized(false),
 	    m_Resizing(false),
 	    m_FontsUpdated(false),
-		m_SafeToRender(false)
+	    m_SafeToRender(false)
 	{
 	}
 

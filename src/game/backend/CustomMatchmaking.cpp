@@ -48,7 +48,7 @@ namespace YimMenu::Features
 	    "mmregiontype",
 	    "Region Type",
 	    "The region to spoof the session to",
-		g_RegionCodes};
+	    g_RegionCodes};
 
 	BoolCommand _SpoofLanguage{
 	    "mmspooflanguage",
@@ -112,7 +112,6 @@ namespace YimMenu
 
 	CustomMatchmaking::CustomMatchmaking()
 	{
-
 	}
 
 	bool CustomMatchmaking::OnAdvertiseImpl(int& num_slots, int& available_slots, rage::rlSessionInfo* info, MatchmakingAttributes* attrs, MatchmakingId* id, rage::rlTaskStatus* status)
@@ -151,7 +150,7 @@ namespace YimMenu
 			auto id_hash = GetIdHash(id);
 
 			m_MultiplexedSessions.emplace(id_hash, std::vector<MatchmakingId>{});
-			
+
 			// create the multiplexed sessions
 			for (int i = 0; i < Features::_MultiplexCount.GetState() - 1; i++)
 			{
@@ -198,7 +197,7 @@ namespace YimMenu
 				auto num_slots_copy = num_slots;
 				auto available_slots_copy = available_slots;
 				FiberPool::Push([session, num_slots_copy, available_slots_copy, info, attrs]() {
-					auto session_copy = session; // the compiler doesn't like it if I use session directly
+					auto session_copy = session;                                                                                                                                                                                    // the compiler doesn't like it if I use session directly
 					BaseHook::Get<Hooks::Matchmaking::MatchmakingUpdate, DetourHook<decltype(&Hooks::Matchmaking::MatchmakingUpdate)>>()->Original()(0, &session_copy, num_slots_copy, available_slots_copy, info, attrs, nullptr); // life's too short to check the task result
 				});
 			}
@@ -235,7 +234,7 @@ namespace YimMenu
 			}
 		}
 
-		return true; 
+		return true;
 	}
 
 	void CustomMatchmaking::OnSendSessionDetailResponseImpl(rage::rlSessionDetailMsg* message)

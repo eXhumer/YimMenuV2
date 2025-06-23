@@ -74,7 +74,7 @@ namespace YimMenu::Submenus
 									handle.SetCombatAttribute(PedCombatAttribute::FleesFromInvincibleOpponents, false);
 									handle.SetCombatAttribute(PedCombatAttribute::CanThrowSmokeGrenade, true);
 									handle.SetCombatAttribute(PedCombatAttribute::CanSeeUnderwaterPeds, true);
-									
+
 									auto group = Self::GetPlayer().GetGroup();
 									handle.AddToGroup(group);
 									PED::SET_GROUP_SEPARATION_RANGE(group, 9999.9f);
