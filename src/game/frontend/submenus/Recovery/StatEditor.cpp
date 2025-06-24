@@ -53,7 +53,8 @@ namespace YimMenu::Submenus
 		        string | std::views::reverse,
 		        [](auto c) {
 			        return std::isspace(c);
-		        }).base()};
+		        })
+		        .base()};
 	}
 
 	static StatInfo GetStatInfo(std::string_view name_str)

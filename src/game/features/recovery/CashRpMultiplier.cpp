@@ -10,7 +10,7 @@ namespace YimMenu::Features
 	static FloatCommand _CMRPMultiplierInput{"cmrpmultiplierinput", "Contact Mission RP Multiplier Input", "Contact Mission RP Mulitplier (< 0 = 0 -> No Mission RP)", std::nullopt, std::nullopt, 1};
 
 	const int cm_CashBase = 20.0;
-    const int cm_RPBase = 9.0;
+	const int cm_RPBase = 9.0;
 
 	class OverrideCashMultiplier : public LoopedCommand
 	{
