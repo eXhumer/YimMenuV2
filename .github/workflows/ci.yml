@@ -3,9 +3,9 @@ name: CI
 on: [ push, pull_request ]
 
 jobs:
-  ci:
+  native-compilation:
     runs-on: [ windows-latest ]
-    name: CI
+    name: Native Compilation
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +37,59 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: RelWithDebInfo-Clang
+          name: RelWithDebInfo-Native-Clang
           path: |
             build/YimMenuV2-dev-*.dll
             build/YimMenuV2-dev-*.pdb
+
+  cross-compilation:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    name: Cross-compilation
+    strategy:
+      matrix:
+        compiler: ["Zig", "Clang"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup CMake and build tools
+        run: |
+          apk update
+          apk add --no-cache build-base git cmake ninja
+          cmake --version
+
+      - name: Setup Zig
+        if: matrix.compiler == 'Zig'
+        run: |
+          apk add --no-cache zig
+          echo "Zig version: $(zig version)"
+
+      - name: Setup Clang with MinGW
+        if: matrix.compiler == 'Clang'
+        run: |
+          apk add --no-cache clang lld mingw-w64-binutils mingw-w64-crt mingw-w64-headers mingw-w64-gcc mingw-w64-winpthreads
+          clang --version
+
+      - name: Generate CMake project
+        run: cmake -DUSE_CROSSCOMPILER=${{ matrix.compiler }} -DCMAKE_BUILD_TYPE=RelWithDebInfo -S . -B build -G Ninja
+
+      - name: Build 64bit RelWithDebInfo DLL
+        run: cmake --build ./build --config RelWithDebInfo --target YimMenuV2 --
+
+      - name: Check if DLL got built
+        run: if [ ! -f build/libYimMenuV2.dll ]; then exit 1; fi
+
+      - name: Rename DLL to libYimMenuV2-dev-{GITHUB_SHA}.dll
+        run: |
+          mv libYimMenuV2.dll libYimMenuV2-dev-${{github.sha}}.dll
+          mv libYimMenuV2.pdb libYimMenuV2-dev-${{github.sha}}.pdb || true
+        working-directory: build/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RelWithDebInfo-Cross-${{ matrix.compiler }}
+          path: |
+            build/libYimMenuV2-dev-*.dll
+            build/libYimMenuV2-dev-*.pdb
