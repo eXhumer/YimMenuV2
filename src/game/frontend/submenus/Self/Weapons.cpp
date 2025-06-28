@@ -32,11 +32,11 @@ namespace YimMenu::Submenus
 				static ScriptFunction getWeaponHeadshots("mp_weapons"_J, ScriptPointer("GetWeaponHeadshots", "5D ? ? ? 39 11").Add(1).Rip());
 				static ScriptFunction getWeaponAccuracy("mp_weapons"_J, ScriptPointer("GetWeaponAccuracy", "2D 01 09 00 00"));
 
-				kills     = getWeaponKills.Call<int>(weaponHash, -1);
-				deaths    = getWeaponDeaths.Call<int>(weaponHash, -1);
-				kd        = getWeaponKDRatio.Call<float>(weaponHash, -1);
+				kills = getWeaponKills.Call<int>(weaponHash, -1);
+				deaths = getWeaponDeaths.Call<int>(weaponHash, -1);
+				kd = getWeaponKDRatio.Call<float>(weaponHash, -1);
 				headshots = getWeaponHeadshots.Call<int>(weaponHash, -1);
-				accuracy  = static_cast<int>(getWeaponAccuracy.Call<float>(weaponHash));
+				accuracy = static_cast<int>(getWeaponAccuracy.Call<float>(weaponHash));
 
 				thread->Kill();
 				thread->m_Context.m_State = rage::scrThread::State::KILLED;

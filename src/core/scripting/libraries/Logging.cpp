@@ -53,7 +53,7 @@ namespace YimMenu::Lua
 			SetFunction(state, Warn, "warn");
 			SetFunction(state, Error, "error");
 			SetFunction(state, Trace, "trace");
-		    lua_setglobal(state, "log");
+			lua_setglobal(state, "log");
 		}
 	};
 

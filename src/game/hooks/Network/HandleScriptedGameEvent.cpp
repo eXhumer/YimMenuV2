@@ -12,8 +12,7 @@ namespace YimMenu::Hooks
 {
 	static bool CheckLuaScripts(Player player, CScriptedGameEvent& event)
 	{
-		return LuaManager::DispatchEvent("menu.script_event_received"_J, [player, &event](lua_State* state)
-		{
+		return LuaManager::DispatchEvent("menu.script_event_received"_J, [player, &event](lua_State* state) {
 			// TODO: pass a Player instance
 			lua_pushinteger(state, player.GetId());
 
@@ -26,7 +25,8 @@ namespace YimMenu::Hooks
 			}
 
 			return 2;
-		}, true);
+		},
+		    true);
 	}
 
 	bool Network::HandleScriptedGameEvent(Player player, CScriptedGameEvent& event)

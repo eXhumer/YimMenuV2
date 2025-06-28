@@ -49,7 +49,7 @@ namespace YimMenu::Submenus
 			}
 
 			ImGui::SameLine();
-		
+
 			ImGui::BeginGroup();
 			if (selectedScript && selectedScript->GetLoadState() == LuaScript::LoadState::UNLOADED)
 				selectedScript.reset();

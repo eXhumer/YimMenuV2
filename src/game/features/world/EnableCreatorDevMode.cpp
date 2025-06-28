@@ -10,7 +10,7 @@ namespace YimMenu
 	    "fm_deathmatch_creator"_J,
 	    "fm_capture_creator"_J,
 	});
-	
+
 	class EnableCreatorDevMode : public BoolCommand
 	{
 		using BoolCommand::BoolCommand;

@@ -82,7 +82,7 @@ namespace YimMenu::Submenus
 									handle.SetCombatAttribute(PedCombatAttribute::CanDoDrivebys, true);
 									handle.SetCombatAttribute(PedCombatAttribute::CanThrowSmokeGrenade, true);
 									handle.SetCombatAttribute(PedCombatAttribute::CanSeeUnderwaterPeds, true);
-									
+
 									auto group = Self::GetPlayer().GetGroup();
 									handle.AddToGroup(group);
 									PED::SET_GROUP_SEPARATION_RANGE(group, 9999.9f);
@@ -123,8 +123,7 @@ namespace YimMenu::Submenus
 
 								if (set_player)
 								{
-									static auto hooked = []()
-									{
+									static auto hooked = []() {
 										NativeHooks::AddHook("freemode"_J, NativeIndex::GET_ENTITY_MODEL, [](rage::scrNativeCallContext* ctx) {
 											auto model = ENTITY::GET_ENTITY_MODEL(ctx->GetArg<int>(0));
 
@@ -146,7 +145,7 @@ namespace YimMenu::Submenus
 												}
 
 												return ctx->SetReturnValue(model);
-											}); 
+											});
 										}
 										return true;
 									}();

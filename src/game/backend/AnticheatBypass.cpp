@@ -104,7 +104,7 @@ namespace YimMenu
 	void AnticheatBypass::RunScriptImpl()
 	{
 		DefuseSigscanner();
-		
+
 		NativeHooks::AddHook("shop_controller"_J, NativeIndex::NET_GAMESERVER_BEGIN_SERVICE, &TransactionHook);
 
 		m_IsFSLLoaded = CheckForFSL();

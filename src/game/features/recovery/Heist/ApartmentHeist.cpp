@@ -33,7 +33,7 @@ namespace YimMenu::Features
 				ScriptMgr::Yield(500ms);
 
 				*base2.At(0, 1).As<int*>() = -1 * (*base1.At(0, 1).As<int*>() + *base1.At(1, 1).As<int*>() + *base1.At(2, 1).As<int*>() + *base1.At(3, 1).As<int*>() - 100);
-				
+
 				for (int i = 1; i <= 3; i++)
 				{
 					*base2.At(i, 1).As<int*>() = *base1.At(i, 1).As<int*>();

@@ -14,8 +14,8 @@ namespace YimMenu
 			std::string m_Path;
 		};
 
-		using ForAllLoadedScriptsCallback = void(*)(std::shared_ptr<LuaScript>& script);
-		using ForAllUnloadedScriptsCallback = void(*)(UnloadedScript& script);
+		using ForAllLoadedScriptsCallback = void (*)(std::shared_ptr<LuaScript>& script);
+		using ForAllUnloadedScriptsCallback = void (*)(UnloadedScript& script);
 
 	private:
 		std::vector<std::shared_ptr<LuaScript>> m_LoadedScripts;

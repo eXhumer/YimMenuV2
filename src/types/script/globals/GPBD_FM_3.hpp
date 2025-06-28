@@ -314,7 +314,7 @@ struct GBPD_FM_3_Entry
 	SCR_BOOL PassiveMode;
 	SCR_BOOL TimeTrialActive; // verify
 	BOSS_GOON BossGoon;
-	uint64_t PAD_507[3]; // unused
+	uint64_t PAD_507[3];                        // unused
 	SCR_INT ScriptEventReplayProtectionCounter; // "uniqueId"
 	TIMER CoronaForcedLaunchTimer;
 	LEAVE_IN_HELI LeaveInHeli;

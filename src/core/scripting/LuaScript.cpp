@@ -15,7 +15,7 @@ namespace YimMenu
 		// our stack right now: retaddr error_message <
 		lua_getglobal(state, "debug");
 		lua_getfield(state, -1, "traceback");
-		
+
 		lua_pushstring(state, error_msg);
 		lua_pushinteger(state, 2);
 
@@ -95,7 +95,7 @@ namespace YimMenu
 			luaL_traceback(coro_state, coro_state, error_msg.c_str(), 1);
 			LOGF(FATAL, "{}: {}", m_ModuleName, lua_tostring(coro_state, -1));
 			lua_pop(coro_state, 1);
-	
+
 			SetMalfunctioning();
 		}
 
@@ -114,12 +114,12 @@ namespace YimMenu
 	    m_ModuleName(std::filesystem::path(file_name).filename().string())
 	{
 		m_State = luaL_newstate();
-		
-		lua_pushlightuserdata(m_State, (void*)this);  
+
+		lua_pushlightuserdata(m_State, (void*)this);
 		lua_setfield(m_State, LUA_REGISTRYINDEX, "context");
 
 		LuaManager::LoadLibraries(m_State);
-		
+
 		auto result = luaL_loadfilex(m_State, file_name.data(), "t");
 		if (result != LUA_OK) // don't load binary chunks
 		{
@@ -260,7 +260,7 @@ namespace YimMenu
 			return false;
 		});
 		m_RunningScriptCallbacks = false;
-		
+
 		std::ranges::move(m_QueuedScriptCallbacks, std::back_inserter(m_ScriptCallbacks));
 		m_QueuedScriptCallbacks.clear();
 	}
@@ -296,7 +296,7 @@ namespace YimMenu
 
 					lua_pop(m_State, 1);
 				}
-				
+
 				if (!result && handle_result)
 					return false;
 			}
@@ -304,7 +304,7 @@ namespace YimMenu
 
 		return result;
 	}
-	
+
 	void LuaScript::ScriptCallback::SetTimeToResume(int millis)
 	{
 		if (millis == 0)

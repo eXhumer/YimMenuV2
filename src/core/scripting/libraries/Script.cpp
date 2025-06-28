@@ -8,7 +8,7 @@ namespace YimMenu::Lua
 	static bool IsCoroutine(lua_State* state)
 	{
 		bool result = lua_pushthread(state);
-		lua_pop(state, 1); 
+		lua_pop(state, 1);
 		return !result; // this is dumb af. Why do you need to push a value to the stack to figure out if you're in the main thread?
 	}
 
@@ -24,7 +24,7 @@ namespace YimMenu::Lua
 
 			lua_State* coro_state = lua_newthread(state);
 			lua_pushvalue(state, 1); // xmove can only move from top of stack, so we have to push the function again even if it's already in the stack
-			lua_xmove(state, coro_state, 1); 
+			lua_xmove(state, coro_state, 1);
 
 			auto coro_handle = luaL_ref(state, LUA_REGISTRYINDEX);
 			script.AddScriptCallback(coro_handle);
@@ -55,9 +55,9 @@ namespace YimMenu::Lua
 		static int RegisterEventHandler(lua_State* state)
 		{
 			auto event_name = GetHashArgument(state, 1);
-			luaL_checktype(state, 2, LUA_TFUNCTION);      
-			lua_pushvalue(state, 2);                    
-			int handler = luaL_ref(state, LUA_REGISTRYINDEX); 
+			luaL_checktype(state, 2, LUA_TFUNCTION);
+			lua_pushvalue(state, 2);
+			int handler = luaL_ref(state, LUA_REGISTRYINDEX);
 
 			LuaScript::GetScript(state).AddEventHandler(event_name, handler);
 			return 0;

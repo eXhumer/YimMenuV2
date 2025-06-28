@@ -26,7 +26,7 @@ namespace YimMenu::Lua
 				CopyObject<YimMenu::ScriptGlobal>(state, global.At(luaL_checkinteger(state, 2), size));
 			else
 				CopyObject<YimMenu::ScriptGlobal>(state, global.At(luaL_checkinteger(state, 2)));
-	
+
 			return 1;
 		}
 

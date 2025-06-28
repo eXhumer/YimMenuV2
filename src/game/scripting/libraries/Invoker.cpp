@@ -123,7 +123,7 @@ namespace YimMenu::Lua
 			case 'v': // Vector3 (not Vector3*)
 				CreateObject<rage::fvector3>(state, invoker.GetReturnValue<rage::scrVector>());
 				return 1;
-			case 'p': // pointer
+			case 'p':                                                   // pointer
 				luaL_error(state, "Pointer returns are not supported"); // and probably never will be
 			}
 

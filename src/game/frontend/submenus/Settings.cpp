@@ -19,7 +19,7 @@ namespace YimMenu::Submenus
 		ImGui::Spacing();
 		ImGui::Separator();
 		ImGui::Spacing();
-		
+
 		// this assumes we can't add new commands in runtime, but a lot of other subsystems assume that too
 		static std::map<std::string, CommandLink*> sortedCommands;
 		static bool commandsSorted = []() {
@@ -40,7 +40,7 @@ namespace YimMenu::Submenus
 	};
 
 	Settings::Settings() :
-	#define ICON_FA_GEARS "\xef\x80\x93"
+#define ICON_FA_GEARS "\xef\x80\x93"
 	    Submenu::Submenu("Settings", ICON_FA_GEARS)
 	{
 		auto hotkeys = std::make_shared<Category>("Hotkeys");

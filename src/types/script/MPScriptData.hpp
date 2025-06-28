@@ -10,7 +10,7 @@ struct MP_SCRIPT_DATA
 	TEXT_LABEL_23 CloudFileName;
 	SCR_INT SharedRegId;
 	uint64_t PAD_0005[6]; // not serialized in the metric
-	SCR_INT InstanceId; 
+	SCR_INT InstanceId;
 	SCR_INT UniqueId;
 	SCR_INT BitSet;
 	SCR_INT GenericInt;

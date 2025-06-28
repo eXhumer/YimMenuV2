@@ -25,7 +25,7 @@ namespace YimMenu::Lua
 		}
 
 		callback->m_Fiber = CreateFiber(0, &LatentFiber, callback); // TODO: maybe create a latent function fiber pool?
-		callback->m_ParentFiber = GetCurrentFiber(); // the scripting system has already turned the main thread into a fiber
+		callback->m_ParentFiber = GetCurrentFiber();                // the scripting system has already turned the main thread into a fiber
 		callback->m_LatentTarget = func;
 		callback->m_CoroState = state;
 		callback->m_LastReturnValue = -1;

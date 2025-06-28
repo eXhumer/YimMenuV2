@@ -240,7 +240,7 @@ namespace YimMenu::Scripts
 				ForceScriptHost(launcher);
 				ScriptMgr::Yield(400ms);
 			}
-			
+
 			launcher->m_Context.m_State = rage::scrThread::State::PAUSED;
 
 			auto serverData = LauncherServerData::Get();
@@ -328,7 +328,7 @@ namespace YimMenu::Scripts
 		auto bypass_global = ScriptGlobal(1986361); // this global will bypass the new checks added this update
 		auto old_val = *bypass_global.As<int*>();
 		*bypass_global.As<int*>() = rand_int_2 ^ rand() ^ time(0);
-		
+
 		event.SetPlayerBits(bits);
 		event.Send();
 

@@ -7,7 +7,7 @@
 namespace YimMenu::Submenus
 {
 	Vehicle::Vehicle() :
-		#define ICON_FA_CAR "\xef\x86\xb9"
+#define ICON_FA_CAR "\xef\x86\xb9"
 	    Submenu::Submenu("Vehicle", ICON_FA_CAR)
 	{
 		auto main = std::make_shared<Category>("Main");

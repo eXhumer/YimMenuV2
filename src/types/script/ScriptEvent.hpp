@@ -2,30 +2,30 @@
 #include "types.hpp"
 #include "MPScriptData.hpp"
 
-#define REGISTER_SCRIPT_EVENT(classType, indexType)                            \
-	constexpr static auto EVENT_INDEX = ScriptEventIndex::indexType;           \
-	classType()                                                                \
-	{                                                                          \
-		memset(reinterpret_cast<void*>(this), 0, sizeof(classType));           \
-		EventIndex = static_cast<int>(EVENT_INDEX);                            \
-	}                                                                          \
-	classType(const classType& other)                                          \
-	{                                                                          \
-		memcpy(reinterpret_cast<void*>(this), &other, sizeof(classType));      \
-		EventIndex = static_cast<int>(EVENT_INDEX);                            \
-	}                                                                          \
-	static constexpr size_t GetSize()                                          \
-	{                                                                          \
-		return sizeof(classType);                                              \
-	}                                                                          \
-	inline void Send()                                                         \
-	{                                                                          \
-		SendImpl(GetSize());                                                   \
-	}                                                                          \
-	inline void Send(int player)                                               \
-	{                                                                          \
-		SetPlayer(player);                                                     \
-		SendImpl(GetSize());                                                   \
+#define REGISTER_SCRIPT_EVENT(classType, indexType)                       \
+	constexpr static auto EVENT_INDEX = ScriptEventIndex::indexType;      \
+	classType()                                                           \
+	{                                                                     \
+		memset(reinterpret_cast<void*>(this), 0, sizeof(classType));      \
+		EventIndex = static_cast<int>(EVENT_INDEX);                       \
+	}                                                                     \
+	classType(const classType& other)                                     \
+	{                                                                     \
+		memcpy(reinterpret_cast<void*>(this), &other, sizeof(classType)); \
+		EventIndex = static_cast<int>(EVENT_INDEX);                       \
+	}                                                                     \
+	static constexpr size_t GetSize()                                     \
+	{                                                                     \
+		return sizeof(classType);                                         \
+	}                                                                     \
+	inline void Send()                                                    \
+	{                                                                     \
+		SendImpl(GetSize());                                              \
+	}                                                                     \
+	inline void Send(int player)                                          \
+	{                                                                     \
+		SetPlayer(player);                                                \
+		SendImpl(GetSize());                                              \
 	}
 
 // I doubt rockstar would cycle this again, but best to keep this, just in case
@@ -78,7 +78,7 @@ enum class ScriptEventIndex
 	TriggerCEORaid = -1906536929,
 
 	StartScriptBegin = -366707054,
-	StartScriptProceed = 1757622014, 
+	StartScriptProceed = 1757622014,
 
 	RequestRandomEvent = -126218586,
 	CollectCollectable = 968269233,
@@ -122,7 +122,7 @@ public:
 	{
 		PlayerBits |= (1 << player);
 	}
-	
+
 	void SetPlayerBits(int bits)
 	{
 		PlayerBits = bits;

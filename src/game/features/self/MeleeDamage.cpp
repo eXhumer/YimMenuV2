@@ -95,7 +95,6 @@ namespace YimMenu::Features
 		{
 			PLAYER::SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER(Self::GetPlayer().GetId(), 1.0f, 1);
 		}
-
 	};
 
 	static MeleeDamage _MeleeDamage{

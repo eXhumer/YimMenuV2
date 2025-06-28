@@ -269,6 +269,6 @@ namespace YimMenu
 	    "ggsm_arcade"_J,
 	    "puzzle"_J,
 	    "camhedz_arcade"_J,
-	    "SCTV"_J,	
+	    "SCTV"_J,
 	});
 }

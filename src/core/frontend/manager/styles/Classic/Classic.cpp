@@ -16,7 +16,7 @@ namespace YimMenu
 
 		ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse;
 		auto pos = ImGui::GetCursorPos();
-		if(ImGui::Begin("##ClassicInputWindow", nullptr, flags))
+		if (ImGui::Begin("##ClassicInputWindow", nullptr, flags))
 		{
 			if (ImGui::BeginChild("##submenus", ImVec2(120, ImGui::GetContentRegionAvail().y - 20), true, ImGuiWindowFlags_NoTitleBar))
 			{

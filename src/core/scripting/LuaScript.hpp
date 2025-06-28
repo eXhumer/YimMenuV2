@@ -85,7 +85,7 @@ namespace YimMenu
 			if (m_LoadState == LoadState::RUNNING)
 				m_LoadState = LoadState::WANT_RELOAD;
 		}
-		
+
 		void Pause()
 		{
 			if (m_LoadState == LoadState::RUNNING)

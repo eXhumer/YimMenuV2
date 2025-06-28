@@ -27,7 +27,7 @@ namespace YimMenu::Features
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_FIXER_HQ_ROCKFORD, "Agency (Rockford)"},
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_FIXER_HQ_SEOUL, "Agency (Little Seoul)"},
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_FIXER_HQ_VESPUCCI, "Agency (Vespucci)"},
-	 // {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_ACID_LAB, "Acid Lab"}, stuck in black screen
+	    // {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_ACID_LAB, "Acid Lab"}, stuck in black screen
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_JUGGALO_HIDEOUT, "Freakhouse"},
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_SALVAGE_YARD_LA_PUERTA, "Salvage Yard (La Puerta)"},
 	    {(int)eSimpleInteriorIndex::SIMPLE_INTERIOR_SALVAGE_YARD_MURIETTA_HEIGHTS, "Salvage Yard (Murietta Heights)"},

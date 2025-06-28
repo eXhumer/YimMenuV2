@@ -6,21 +6,21 @@ namespace YimMenu::Submenus
 	{
 		auto dailyActivities = std::make_shared<Category>("Daily Activities");
 
-		auto challengesTab       = std::make_shared<CollapsingHeaderItem>("Challenges");
-		auto hiddenCacheTab      = std::make_shared<CollapsingHeaderItem>("Hidden Caches");
-		auto treasureChestTab    = std::make_shared<CollapsingHeaderItem>("Treasure Chests");
-		auto shipwreckedTab      = std::make_shared<CollapsingHeaderItem>("Shipwreck");
-		auto buriedStashTab      = std::make_shared<CollapsingHeaderItem>("Buried Stashes");
-		auto skydiveTab          = std::make_shared<CollapsingHeaderItem>("Junk Energy Skydives");
-		auto timeTrialsTab       = std::make_shared<CollapsingHeaderItem>("Time Trials");
-		auto exoticExportsTab    = std::make_shared<CollapsingHeaderItem>("Exotic Exports");
-		auto deadDropTab         = std::make_shared<CollapsingHeaderItem>("G's Cache");
-		auto stashHouseTab       = std::make_shared<CollapsingHeaderItem>("Stash House");
-		auto streetDealerTab     = std::make_shared<CollapsingHeaderItem>("Street Dealers");
-		auto lsTagsTab           = std::make_shared<CollapsingHeaderItem>("LS Tags");
-		auto madrazoHitsTab      = std::make_shared<CollapsingHeaderItem>("Madrazo Hits");
+		auto challengesTab = std::make_shared<CollapsingHeaderItem>("Challenges");
+		auto hiddenCacheTab = std::make_shared<CollapsingHeaderItem>("Hidden Caches");
+		auto treasureChestTab = std::make_shared<CollapsingHeaderItem>("Treasure Chests");
+		auto shipwreckedTab = std::make_shared<CollapsingHeaderItem>("Shipwreck");
+		auto buriedStashTab = std::make_shared<CollapsingHeaderItem>("Buried Stashes");
+		auto skydiveTab = std::make_shared<CollapsingHeaderItem>("Junk Energy Skydives");
+		auto timeTrialsTab = std::make_shared<CollapsingHeaderItem>("Time Trials");
+		auto exoticExportsTab = std::make_shared<CollapsingHeaderItem>("Exotic Exports");
+		auto deadDropTab = std::make_shared<CollapsingHeaderItem>("G's Cache");
+		auto stashHouseTab = std::make_shared<CollapsingHeaderItem>("Stash House");
+		auto streetDealerTab = std::make_shared<CollapsingHeaderItem>("Street Dealers");
+		auto lsTagsTab = std::make_shared<CollapsingHeaderItem>("LS Tags");
+		auto madrazoHitsTab = std::make_shared<CollapsingHeaderItem>("Madrazo Hits");
 		auto wildlifePhotography = std::make_shared<CollapsingHeaderItem>("Shoot Animals Photography");
-		auto smokeOnTheWater     = std::make_shared<CollapsingHeaderItem>("Smoke on the Water");
+		auto smokeOnTheWater = std::make_shared<CollapsingHeaderItem>("Smoke on the Water");
 
 		dailyActivities->AddItem(std::make_shared<CommandItem>("setallactivitiescompleted"_J));
 		dailyActivities->AddItem(std::make_shared<CommandItem>("resetallactivities"_J));

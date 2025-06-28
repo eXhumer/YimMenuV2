@@ -12,10 +12,10 @@ namespace YimMenu::Lua
 			// ensure that only safe libraries are loaded
 			static const luaL_Reg lj_lib_load[] = {
 			    {"", luaopen_base},
-		  //    {LUA_LOADLIBNAME, luaopen_package},
+			    //    {LUA_LOADLIBNAME, luaopen_package},
 			    {LUA_TABLIBNAME, luaopen_table},
-		  //    {LUA_IOLIBNAME, luaopen_io},
-	      //    {LUA_OSLIBNAME, luaopen_os},
+			    //    {LUA_IOLIBNAME, luaopen_io},
+			    //    {LUA_OSLIBNAME, luaopen_os},
 			    {LUA_STRLIBNAME, luaopen_string},
 			    {LUA_MATHLIBNAME, luaopen_math},
 			    {LUA_DBLIBNAME, luaopen_debug},
@@ -24,7 +24,7 @@ namespace YimMenu::Lua
 			    {NULL, NULL}};
 
 			static const luaL_Reg lj_lib_preload[] = {
-		//	    {LUA_FFILIBNAME, luaopen_ffi},
+			    //	    {LUA_FFILIBNAME, luaopen_ffi},
 			    {NULL, NULL}};
 
 

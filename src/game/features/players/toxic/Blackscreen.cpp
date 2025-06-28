@@ -24,7 +24,7 @@ namespace YimMenu::Features
 			message.MissionPassNotify2 = true;
 			message.PAD_0004 = 999;
 			message.Variation = 999;
-			message.Flags = 3; 
+			message.Flags = 3;
 			for (auto& player : players)
 				message.SetPlayer(player.GetId());
 			message.Send();

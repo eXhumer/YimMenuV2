@@ -28,7 +28,7 @@ namespace YimMenu
 	    "Rail",
 	    "Open Wheel"});
 
-		static constexpr auto g_VehicleHashes = std::to_array({
+	static constexpr auto g_VehicleHashes = std::to_array({
 	    "adder"_J,
 	    "airbus"_J,
 	    "airtug"_J,
